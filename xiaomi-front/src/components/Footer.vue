@@ -9,19 +9,19 @@
 		  <i class="fa fa-bars"></i>
 		  <p>分类</p>
 		</li>
-		<li>
+		<!-- <li>
 		  <i class="fa fa-life-bouy"></i>
 		  <p>米圈</p>
-		</li>
+		</li> -->
 		<li @click="toCart" class="cart">
 		  <i class="fa fa-shopping-cart"></i>
 		  <p>购物车</p>
 		  <div class="quantity" v-if="cartcount>0">{{cartcount}}</div>
 		</li>
-		<li>
+		<!-- <li>
 		  <i class="fa fa-user-o"></i>
 		  <p>我的</p>
-		</li>
+		</li> -->
 	  </ul>
 	</footer>
   </template>
