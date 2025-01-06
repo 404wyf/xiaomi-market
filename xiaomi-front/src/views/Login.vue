@@ -15,7 +15,7 @@
                   <input type="password" v-model="coutomer.password" placeholder="请输入密码">
               </div>
               <div class="btn" @click="login">登 录</div>
-              <div class="btn register" onclick="location.href='register.html'">注 册</div>
+              <div class="btn register" @click="toRegister">注 册</div>
   
               <div style="width: 100%; height: 14.4vw;"></div>
           </section>
@@ -65,6 +65,11 @@
           console.log(error);
         });
   }
+
+
+  let toRegister = () => {
+	router.push("/register");
+  };
   
   </script>
   

@@ -6,7 +6,7 @@ import Login from '../views/Login.vue'
 import Cart from '../views/Cart.vue'
 import Settlement from '../views/Settlement.vue'
 import Payment from '../views/Payment.vue'
-
+import Register from '@/views/Register.vue'
 const routes = [
   {
     path: '/',
@@ -40,6 +40,10 @@ const routes = [
     path: '/payment',
     name: 'Payment',
     component: Payment
+  },{
+    path: '/register',
+    name: 'Register',
+    component: Register
   }
 ]
 

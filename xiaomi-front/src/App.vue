@@ -6,6 +6,9 @@
 import axios from 'axios';
 import { provide } from 'vue';
 
+
+
+
 //设置axios的共通url
 axios.defaults.baseURL = 'http://127.0.0.1:7001/';
 provide('axios',axios);

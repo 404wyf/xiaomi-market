@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-
-//导入font-awesome的CSS
 import 'font-awesome/css/font-awesome.min.css'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+ 
 
 router.beforeEach(function (to, from, next) {
     let customer = sessionStorage.getItem('customer');
@@ -15,4 +16,8 @@ router.beforeEach(function (to, from, next) {
     next();
 });
 
-createApp(App).use(router).mount('#app')
+
+const app = createApp(App);
+app.use(ElementPlus);
+app.use(router);
+app.mount('#app');
