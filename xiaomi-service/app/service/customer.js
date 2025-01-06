@@ -7,12 +7,20 @@ class CustomerService extends Service {
 
     try {
       const result = await this.app.mysql.insert("customer", {
-        telid: customer.telid,
-        customerName: customer.name,
-        password: customer.pwd,
-        remarks: customer.remarks
+        telId: customer.telId,
+        customerName: customer.customerName,
+        password: customer.password,
+        remarks:customer.remarks
       });
-      console.log(result);
+
+      const rs2=await this.app.mysql.insert("address",{
+        contactName:customer.customerName,
+        contactTel:customer.telId,
+        address:customer.address,
+        telId:customer.telId,
+        defaultState:customer.defaultState
+      })
+   //   console.log(result);
       return result.affectedRows === 1;
     } catch (error) {
       console.error(error);

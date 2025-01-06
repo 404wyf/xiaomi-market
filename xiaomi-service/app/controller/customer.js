@@ -12,22 +12,23 @@ class CustomerController extends Controller {
 
 
     const rule={
-        telid:{
+        telId:{
             type:'string',
             required:true,
             min :11,
             max:11,
             message:"请输入正确的手机号"
         },
-        pwd:{
+        password:{
             type:'string',min:3,max:8,required:true,message:"请输入3——8位密码"
         },
-        name:{
+        customerName:{
             type:'string',required:true,message:"用户名"
         },
-        remarks:{
+
+        address:{
             type:'string',
-            required:false
+            required:true
         }
     }
 
