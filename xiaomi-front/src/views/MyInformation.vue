@@ -6,7 +6,7 @@
       <!-- 页面的其他内容 -->
       <img src="../assets/dingzheng.jpg">
 
-      <div >
+      <div>
         <span class="table-my">姓名： {{ customer.customerName }}</span>
         <el-divider border-style="solid" />
         <span class="table-my">电话： {{ customer.telId }}</span>
@@ -19,6 +19,7 @@
 
 
     </div>
+
     <button class="btn" @click="logOut()">退出</button>
     <myfooter></myfooter>
   </div>
@@ -27,10 +28,9 @@
 <script setup>
 
 // 使用js语言写页面数据对象、事件、逻辑
-import myfooter from '../components/Footer.vue'
-import { removeSessionStorage } from '@/utils/common'
+import myfooter from '../components/Footer.vue';
 import { useRouter } from "vue-router";
-import { getSessionStorage } from "../utils/common.js";
+import { getSessionStorage, removeSessionStorage } from "../utils/common.js";
 import { ref, inject } from "vue";
 
 
@@ -62,6 +62,8 @@ const logOut = () => {
   //跳转到登录界面
   router.push("/login")
 }
+
+
 </script>
 
 <style scoped>
@@ -74,8 +76,9 @@ const logOut = () => {
   .content {
     flex-grow: 1;
     font-size: 80px;
-   
+
   }
+
 }
 
 
