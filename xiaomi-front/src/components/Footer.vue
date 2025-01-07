@@ -18,7 +18,7 @@
 		  <p>购物车</p>
 		  <div class="quantity" v-if="cartcount>0">{{cartcount}}</div>
 		</li>
-		<li @click="toLogin">
+		<li @click="toMyInformation">
 		  <i class="fa fa-user-o"></i>
 		  <p>我的</p>
 		</li>
@@ -70,6 +70,10 @@
 
   let toLogin = () => {
 	router.push("/login");
+  };
+
+  let toMyInformation = () => {
+	router.push("/myInformation");
   };
   </script>
   

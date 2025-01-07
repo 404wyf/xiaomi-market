@@ -7,6 +7,7 @@ import Cart from '../views/Cart.vue'
 import Settlement from '../views/Settlement.vue'
 import Payment from '../views/Payment.vue'
 import Register from '@/views/Register.vue'
+import MyInformation from '@/views/MyInformation.vue'
 const routes = [
   {
     path: '/',
@@ -44,6 +45,10 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
+  },{
+    path:'/myInformation',
+    name:'MyInformation',
+    component:MyInformation
   }
 ]
 
