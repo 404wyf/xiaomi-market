@@ -1,26 +1,29 @@
 <view class="myInformation">
 
-  <view class="content">
-    <image src="/public/images/logo.png" class="touxiang"></image>
-    <view class="info-item">
-      <text class="label">姓名：</text>
-      <text class="value">{{customer.customerName}}</text>
-    </view>
-    <view class="info-item">
-      <text class="label">电话：</text>
-      <text class="value">{{customer.telId}}</text>
-    </view>
-    <view class="info-item">
-      <text class="label">收货地址：</text>
-      <text class="value">{{address.address}}</text>
-    </view>
-    <view class="info-item">
-      <text class="label">个性签名：</text>
-      <text class="value">芝士雪豹</text>
-    </view>
-  </view>
+    <view class="content">
 
-  <view class="button-container">
-    <button class="btn" bindtap="Logout">退出</button>
-  </view>
+        <image src="/public/images/logo.png" class="touxiang"></image>
+        <view class="info-item">
+            <text class="label">姓名：</text>
+            <text class="value">{{customer.customerName}}</text>
+        </view>
+        <view class="info-item">
+            <text class="label">电话：</text>
+            <text class="value">{{customer.telId}}</text>
+        </view>
+        <view class="info-item">
+            <text class="label">收货地址：</text>
+            <text class="value">{{address.address}}</text>
+        </view>
+        <view class="info-item">
+            <text class="label">个性签名：</text>
+            <text class="value">芝士雪豹</text>
+        </view>
+                <!-- 视频播放器 -->
+                <video src="http://www.songsiyi.asia/wp-content/uploads/2025/01/1736349141-dc04159f-4b22-40ca-872f-0bea19d2f53b.mp4" controls class="video-player"></video>
+    </view>
+
+    <view class="button-container">
+        <button class="btn" bindtap="Logout">退出</button>
+    </view>
 </view>

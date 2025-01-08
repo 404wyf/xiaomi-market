@@ -59,3 +59,10 @@
     justify-content: center;
     align-items: center;
   }
+
+  /* 视频播放器样式 */
+.video-player {
+    width: 100%; /* 设置视频宽度为容器宽度 */
+    height: 225px; /* 设置视频高度，根据需要调整 */
+    margin-top: 20px; /* 与信息项之间的间距 */
+  }

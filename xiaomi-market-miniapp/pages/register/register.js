@@ -90,7 +90,7 @@ Page({
 
     toLogin() {
         wx.navigateTo({
-            url: '/pages/login/login',
+            url: '/pages/customer/customer',
         })
     },
     onLoad(options) {
