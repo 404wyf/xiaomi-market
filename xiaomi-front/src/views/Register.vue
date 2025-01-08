@@ -77,7 +77,7 @@
           defaultState:1
       })
         .then(response=>{
-          if(response.data.data.length==0){
+          if(response.data.data==0){
               alert('手机号码或密码输入错误！');
           }else{
             toLogin();

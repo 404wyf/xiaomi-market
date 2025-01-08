@@ -1,0 +1,26 @@
+<view class="index">
+  <view class="left">
+    <view class="item {{item.goodsTypeId==goodsType.goodsTypeId?'select-item':''}}"
+    wx:for="{{goodsTypeArr}}"
+    wx:key="goodsTypeId"
+    bind:tap="selectGoodsType"
+    data-index="{{index}}">
+    {{item.goodsTypeName}}
+    </view>
+  </view>
+  <view class="right">
+    <image src="{{goodsType.goodsTypeImg}}"></image>
+    <view class="title">{{goodsType.goodsTypeName}}</view>
+    <view class="goods" bind:tap="toGoods"
+      data-goodsid="{{item.goodsId}}"
+      wx:for="{{goodsArr}}"
+      wx:key="goodsId">
+      <image src="{{item.goodsImg}}"></image>
+      <view class="content">
+        <view class="name">{{item.goodsName}}</view>
+        <view class="price">¥{{item.goodsPrice}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

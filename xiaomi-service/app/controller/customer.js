@@ -45,7 +45,7 @@ class CustomerController extends Controller {
         // 调用 service 方法
         console.log(params);
         const rs = await ctx.service.customer.addCustomer(params);
-        //console.log(rs);
+        console.log(rs);
        this.returnResult(rs);
     }
 
@@ -56,7 +56,7 @@ class CustomerController extends Controller {
   async login(){
 
     const { ctx } = this;
-
+    
     const rule={
         telId:{
             type:'string',
@@ -75,6 +75,7 @@ class CustomerController extends Controller {
     }
 
     let params=this.ctx.request.body;
+    
    // console.log("params:"+JSON.stringify(params));
     const validDateErrors=parameter.validate(rule,params);
     if(validDateErrors){

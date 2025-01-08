@@ -1,0 +1,122 @@
+.settlement {
+    width: 100%;
+    height: 100vh;
+    background-color: #EEE;
+  }
+  .address {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4vw;
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vw;
+  }
+  .address .left .information {
+    font-size: 4.2vw;
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 2vw;
+  }
+  .address .left .detailedAddress {
+    font-size: 3.2vw;
+    color: #888;
+  }
+  .address .right {
+    font-style: 4vw;
+    color: #FF6700;
+  }
+  .goods {
+    width: 100%;
+    height: 18vw;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 5vw;
+    margin-bottom: 0.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .goods .left {
+    display: flex;
+    align-items: center;
+  }
+  .goods .left image {
+    width: 14vw;
+    height: 14vw;
+  }
+  .goods .left .goodsName {
+    font-size: 3.4vw;
+    color: #888;
+    margin-left: 4vw;
+  }
+  .goods .right .price {
+    color: #666;
+  }
+  .goods .right .quantity {
+    color: #888;
+  }
+  .shopping {
+    margin: 3vw 0;
+    text-align: center;
+    color: #FF6700;
+  }
+  .payment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-bottom: 0.5vw;
+    padding: 2vw;
+  }
+  .payment .type {
+    display: flex;
+    align-items: center;
+  }
+  .payment .type image {
+    width: 9vw;
+    height: 9vw;
+    margin-right: 4vw;
+  }
+  .payment .type text {
+    font-size: 3.6vw;
+    color: #555;
+  }
+  .bottom {
+    width: 100%;
+    height: 14vw;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0vw;
+  }
+  .bottom .left {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+    color: #999;
+  }
+  .bottom .left text {
+    font-size: 5.4vw;
+    color: #FF6700;
+    margin-right: 2vw;
+  }
+  .bottom .right {
+    width: 30%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF6700;
+    color: #FFF;
+    border-radius: 6vw;
+    box-sizing: border-box;
+    margin-right: 2vw;
+  }

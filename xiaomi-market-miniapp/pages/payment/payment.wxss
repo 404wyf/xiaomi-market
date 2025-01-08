@@ -1,0 +1,14 @@
+.payment {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  .title {
+    text-align: center;
+    margin: 10vw 0 7vw;
+    color: #333;
+  }
+  .payment view {
+    font-size: 3.6vw;
+    color: #666;
+    margin-top: 1vw;
+  }

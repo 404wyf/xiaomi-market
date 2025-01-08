@@ -1,0 +1,32 @@
+<view class="cart">
+    <view style="width: 100%; height: 13.9vw"></view>
+    <image class="cart-null" wx:if="{{cartArr.length === 0}}" src="/public/images/cartnull.png"></image>
+
+    <view class="item" wx:for="{{cartArr}}" wx:key="item.cartId">
+        <view class="left">
+            <icon type="success" color="#FF6700" wx:if="{{item.state==1}}" bind:tap="isSelect" data-goodsid="{{item.goodsId}}" data-state="{{item.state}}" />
+            <icon type="circle" color="#FF6700" wx:if="{{item.state==0}}" bind:tap="isSelect" data-goodsid="{{item.goodsId}}" data-state="{{item.state}}" />
+            <image src="{{item.goodsImg}}" class="good"></image>
+            <view class="content">
+                <view class="name">{{item.goodsName}}</view>
+                <view class="price">¥{{item.goodsPrice}}</view>
+                <view class="quantity">
+                    <image src="/public/images/jianhao.png" class="sub" bind:tap="subQuantity" data-goodsid="{{item.goodsId}}" data-quantity="{{item.quantity}}"></image>
+                    <view class="num">{{item.quantity}}</view>
+                    <image src="/public/images/jiahao.png" class="add" bind:tap="addQuantity" data-goodsid="{{item.goodsId}}" data-quantity="{{item.quantity}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="right">
+            <icon type="cancel" color="#FF6700" bind:tap="deleteCart" data-goodsid="{{item.goodsId}}" />
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="left">
+            共{{goodsCount}}件 金额：<text>{{goodsPrice}}</text>元
+        </view>
+        <view class="right" bind:tap="toIndex" wx:if="{{cartArr.length === 0}}">继续购物</view>
+        <view class="right" bind:tap="toSettle" wx:if="{{cartArr.length !== 0}}">去结算</view>
+
+    </view>
+</view>

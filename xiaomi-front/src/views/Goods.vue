@@ -135,7 +135,7 @@ const addCart = () => {
     axios
       .post("selectCartByTelIdByGoodsId", {
         telId: customer.telId,
-        goodsId: route.query.goodsId,
+        goodsId: parseInt(route.query.goodsId),
       })
       .then((response) => {
       //  console.log("fgg");

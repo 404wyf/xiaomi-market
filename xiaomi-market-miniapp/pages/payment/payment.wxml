@@ -1,0 +1,17 @@
+<view class="payment">
+  <view class="title">第三方支付平台页面</view>
+  <view class="content">
+    <view class="gid">订单编号：{{orders.orderId}}</view>
+    <view>订单金额：{{orders.orderTotal}}</view>
+    <view>客户号码：{{orders.telId}}</view>
+    <view>客户姓名：{{orders.customerName}}</view>
+    <view>订单状态：待付款</view>
+    <view>收货地址:{{orders.address}}</view>
+    <view>联系人：{{orders.contactName}}</view>
+    <view>联系电话：{{orders.contactTel}}</view>
+    <view>订单日期：{{orders.orderDate}}</view>
+    <view>订购商品</view>
+    <view wx:for="{{orderdetailsArr}}" wx:key="item.odId">
+    {{index+1}}、{{item.goodsName}} x {{item.quantity}}</view>
+  </view>
+</view>

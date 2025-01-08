@@ -11,7 +11,7 @@ class CartController extends Controller {
         let queryObj = ctx.request.body;
         const rule = {
             goodsId: {
-                type: 'string',
+                type: 'int',
                 required: true,
                 message: "请输入正确的商品编号"
             },
@@ -26,6 +26,7 @@ class CartController extends Controller {
        // console.log(queryObj);
         const validDateErrors = parameter.validate(rule, queryObj);
         if (validDateErrors) {
+            //console.log(queryObj);
             console.log(validDateErrors);
             this.badRequest(validDateErrors);
         }
@@ -109,11 +110,11 @@ class CartController extends Controller {
 
 
         request.goodsId=parseInt(request.goodsId,10);
-        console.log(request);
+       // console.log(request);
         const validDateErrors = parameter.validate(rule, request);
         if (validDateErrors) {
 
-            //console.log(validDateErrors);
+            console.log(validDateErrors);
             this.badRequest(validDateErrors);
         }
         else {

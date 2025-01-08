@@ -21,7 +21,7 @@ class CustomerService extends Service {
         defaultState:customer.defaultState
       })
    //   console.log(result);
-      return result.affectedRows === 1;
+      return result.affectedRows ;
     } catch (error) {
       console.error(error);
       return false;

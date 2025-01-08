@@ -1,0 +1,10 @@
+<view class="goods">
+  <image src="{{goods.goodsImg}}"></image>
+    <view class="box">
+      <view class="price"><text>¥</text>{{goods.goodsPrice}}</view>
+      <view class="name">{{goods.goodsName}}</view>
+    <view class="content">{{goods.goodsExplain}}</view>
+    </view>
+    <view class="addcartBtn" bind:tap="addCart">加入购物车</view>
+    <view class="selectcartBtn" bind:tap="toCart">查看购物车</view>
+</view>
