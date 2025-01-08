@@ -16,7 +16,7 @@
     </view>
     <view class="info-item">
       <text class="label">个性签名：</text>
-      <text class="value">{{customer.signature}}</text>
+      <text class="value">芝士雪豹</text>
     </view>
   </view>
 
