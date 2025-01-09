@@ -18,6 +18,12 @@
         <span class="label">个性签名：</span>
         <span class="value">雪豹闭嘴</span>
       </div>
+
+      <video
+        src="http://www.songsiyi.asia/wp-content/uploads/2025/01/1736349141-dc04159f-4b22-40ca-872f-0bea19d2f53b.mp4"
+        controls
+        class="video-player"
+      ></video>
     </div>
 
     <div class="button-container">
@@ -125,4 +131,11 @@ const Logout = () => {
   justify-content: center;
   align-items: center;
 }
+
+.video-player {
+  width: 100%;
+  height: 225px; /* 根据需要调整视频高度 */
+  margin-top: 20px;
+}
+
 </style>
