@@ -20,7 +20,7 @@
             <text class="value">芝士雪豹</text>
         </view>
         <!-- 视频播放器 -->
-        <video src="http://www.songsiyi.asia/wp-content/uploads/2025/01/1736349141-dc04159f-4b22-40ca-872f-0bea19d2f53b.mp4" controls class="video-player"></video>
+        <video src="http://www.songsiyi.asia/wp-content/uploads/2025/01/1736349141-dc04159f-4b22-40ca-872f-0bea19d2f53b.mp4"   controls class="video-player"  ></video>
     </view>
 
     <view class="button-container">

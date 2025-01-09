@@ -1,47 +1,60 @@
 <view class="settlement">
+  <!-- 收货地址 -->
   <view class="address">
     <view class="left">
       <view class="information">{{address.contactName}} {{address.contactTel}}</view>
       <view class="detailedAddress">{{address.address}}</view>
     </view>
-    <view class="right">地址管理</view>
+    <view class="right" bindtap="toIndex">地址管理</view>
   </view>
+
+  <!-- 购物车商品 -->
   <view class="goods" wx:for="{{cartArr}}">
     <view class="left">
       <image src="{{item.goodsImg}}"/>
-      <view class=" goodsName">{{item.goodsName}}</view>
+      <view class="goodsName">{{item.goodsName}}</view>
+    </view>
+    <view class="right">
+      <view class="price">¥{{item.goodsPrice}}</view>
+      <view class="quantity">x {{item.quantity}}</view>
+    </view>
   </view>
-  <view class="right">
-    <view class="price">¥{{item.goodsPrice}}</view>
-    <view class="quantity">x {{item.quantity}}</view>
+
+  <!-- 继续购物按钮 -->
+  <view class="shopping" bindtap="toIndex">继续购物</view>
+
+  <!-- 支付方式选择 -->
+  <radio-group bindchange="onPaymentChange">
+    <view class="payment">
+      <view class="type">
+        <image src="/public/images/payment01.png"></image>
+        <text>支付宝</text>
+      </view>
+      <radio value="alipay" checked="{{selectedPayment === 'alipay'}}" />
+    </view>
+
+    <view class="payment">
+      <view class="type">
+        <image src="/public/images/payment02.png"></image>
+        <text>小米钱包</text>
+      </view>
+      <radio value="xiaomi" checked="{{selectedPayment === 'xiaomi'}}" />
+    </view>
+
+    <view class="payment">
+      <view class="type">
+        <image src="/public/images/payment03.png"></image>
+        <text>微信支付</text>
+      </view>
+      <radio value="wechat" checked="{{selectedPayment === 'wechat'}}" />
+    </view>
+  </radio-group>
+
+  <!-- 底部结算栏 -->
+  <view class="bottom">
+    <view class="left">
+      共{{goodsCount}}件 金额：<text>{{goodsPrice}}</text>元
+    </view>
+    <view class="right" bindtap="toPay">去付款</view>
   </view>
-</view>
-<view class="shopping" bind:tap="toIndex">继续购物</view>
-<view class="payment">
-  <view class="type">
-    <image src="/public/images/payment01.png"></image>
-    <text>支付宝</text>
-  </view>
-  <radio value="" />
-</view>
-<view class="payment">
-  <view class="type">
-    <image src="/public/images/payment02.png"></image>
-    <text>小米钱包</text>
-  </view>
-  <radio value="" />
-</view>
-<view class="payment">
-  <view class="type">
-    <image src="/public/images/payment03.png"></image>
-    <text>微信支付</text>
-  </view>
-  <radio value="" />
-</view>
-<view class="bottom">
-  <view class="left">
-    共{{goodsCount}}件 金额：<text>{{goodsPrice}}</text>元
-  </view>
-  <view class="right" bind:tap="toPay">去付款</view>
-</view>
 </view>

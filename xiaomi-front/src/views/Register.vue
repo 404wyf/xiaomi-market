@@ -36,7 +36,7 @@
   import Footer from "@/components/Footer.vue";
   import { useRouter } from 'vue-router';
   import { ref, inject } from 'vue';
-  import { setSessionStorage } from '../utils/common.js';
+ 
   
   const axios = inject('axios');
   const router = useRouter();

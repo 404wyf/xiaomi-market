@@ -58,7 +58,8 @@
               alert('手机号码或密码输入错误！');
           }else{
               setSessionStorage('customer',response.data.data[0]);
-              router.go(-1);
+              router.push("/myInformation");
+             // router.go(-1);
           }
         })
         .catch(error=>{

@@ -1,106 +1,84 @@
 <template>
-    <div class="container">
-      <header>
-        <p>用户结算</p>
-      </header>
-  
-      <section>
-        <div style="width: 100%; height: 13.9vw"></div>
-        <div class="address">
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <div class="content">
-            <div class="content-left">
-              <h3>{{address.contactName}} {{address.contactTel}}</h3>
-              <p>{{address.address}}</p>
-            </div>
-            <div class="content-right" onclick="location.href='addressList.html'">
-              <i class="fa fa-angle-right"></i>
-            </div>
+  <div class="container">
+    <header>
+      <p>用户结算</p>
+    </header>
+
+    <section>
+      <!-- 地址部分 -->
+      <div style="width: 100%; height: 13.9vw"></div>
+      <div class="address">
+        <ul>
+          <li></li>
+        </ul>
+        <div class="content">
+          <div class="content-left">
+            <h3>{{ address.contactName }} {{ address.contactTel }}</h3>
+            <p>{{ address.address }}</p>
+          </div>
+          <div class="content-right" onclick="location.href='addressList.html'">
+            <i class="fa fa-angle-right"></i>
           </div>
         </div>
-        <div class="detailed">
-          <ul>
-            <li v-for="cart in cartArr" :key="cart.cartId">
-              <div class="detailed-left">
-                <img :src="cart.goodsImg" />
-                <p>{{cart.goodsName}}</p>
-              </div>
-              <div class="detailed-right">
-                <p>￥{{cart.goodsPrice}}</p>
-                <p>x {{cart.quantity}}</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="payment">
-          <ul>
-            <li>
-              <div class="payment-left">
-                <img src="../assets/payment01.png" />
-                <p>支付宝</p>
-              </div>
-              <input type="radio" checked />
-            </li>
-            <li>
-              <div class="payment-left">
-                <img src="../assets/payment02.png" />
-                <p>小米钱包</p>
-              </div>
-              <input type="radio" />
-            </li>
-            <li>
-              <div class="payment-left">
-                <img src="../assets/payment03.png" />
-                <p>微信支付</p>
-              </div>
-              <input type="radio" />
-            </li>
-          </ul>
-        </div>
-        <div style="width: 100%; height: 14.4vw"></div>
-      </section>
-  
-      <footer>
+      </div>
+
+      <!-- 购物车详情部分 -->
+      <div class="detailed">
         <ul>
-          <li>共{{goodsTotalQuantity}}件 合计：{{goodsTotalPrice}}</li>
-          <li @click="toPayment">去付款</li>
+          <li v-for="cart in cartArr" :key="cart.cartId">
+            <div class="detailed-left">
+              <img :src="cart.goodsImg" />
+              <p>{{ cart.goodsName }}</p>
+            </div>
+            <div class="detailed-right">
+              <p>￥{{ cart.goodsPrice }}</p>
+              <p>x {{ cart.quantity }}</p>
+            </div>
+          </li>
         </ul>
-      </footer>
-    </div>
-  </template>
+      </div>
+
+      <!-- 支付方式选择部分 -->
+      <div class="payment">
+        <ul>
+          <li>
+            <div class="payment-left">
+              <img src="../assets/payment01.png" />
+              <p>支付宝</p>
+            </div>
+            <input type="radio" v-model="selectedPaymentMethod" value="alipay" />
+          </li>
+          <li>
+            <div class="payment-left">
+              <img src="../assets/payment02.png" />
+              <p>小米钱包</p>
+            </div>
+            <input type="radio" v-model="selectedPaymentMethod" value="xiaomi" />
+          </li>
+          <li>
+            <div class="payment-left">
+              <img src="../assets/payment03.png" />
+              <p>微信支付</p>
+            </div>
+            <input type="radio" v-model="selectedPaymentMethod" value="wechat" />
+          </li>
+        </ul>
+      </div>
+      <div style="width: 100%; height: 14.4vw"></div>
+    </section>
+
+    <footer>
+      <ul>
+        <li>共{{ goodsTotalQuantity }}件 合计：￥{{ goodsTotalPrice }}</li>
+        <li @click="toPayment">去付款</li>
+      </ul>
+    </footer>
+  </div>
+</template>
   
   <script setup>
-  import { useRouter } from "vue-router";
   import { ref, inject, computed } from "vue";
+  import { useRouter } from "vue-router";
   import { getSessionStorage, getCurDate, getCurTime } from "../utils/common.js";
   
   const axios = inject("axios");
@@ -110,7 +88,10 @@
   const cartArr = ref([]);
   const customer = getSessionStorage("customer");
   
-  //使用计算属性获取商品总数量和总金额
+  // 当前选择的支付方式，默认为支付宝
+  const selectedPaymentMethod = ref("alipay");
+  
+  //计算商品总数量和总金额
   const goodsTotalQuantity = computed(() => {
     let totalQuantity = 0;
     for (let i = 0; i < cartArr.value.length; i++) {
@@ -118,6 +99,7 @@
     }
     return totalQuantity;
   });
+  
   const goodsTotalPrice = computed(() => {
     let totalPrice = 0;
     for (let i = 0; i < cartArr.value.length; i++) {
@@ -134,7 +116,6 @@
       })
       .then((response) => {
         address.value = response.data.data[0];
-        //console.log(address.value);
       })
       .catch((error) => {
         console.log(error);
@@ -142,21 +123,17 @@
   
     axios
       .get("selectCartByTelId", {
-        params:{
+        params: {
           telId: customer.telId,
         }
-       
       })
       .then((response) => {
         let arr = response.data.data;
-
         for (let cart of arr) {
           if (cart.state == 1) {
             cartArr.value.push(cart);
           }
         }
-        console.log(cartArr);
-
       })
       .catch((error) => {
         console.log(error);
@@ -164,28 +141,30 @@
   };
   init();
   
-  const toPayment = ()=>{
-      axios
+  // 处理支付按钮点击
+  const toPayment = () => {
+    axios
       .post("insertOrders", {
         telId: customer.telId,
-        orderDate: getCurDate()+' '+getCurTime(),
-        orderTotal: goodsTotalPrice.value,     //计算属性也是ref响应数据
+        orderDate: getCurDate() + ' ' + getCurTime(),
+        orderTotal: goodsTotalPrice.value,
         addressId: address.value.addressId,
         orderState: 0,
-        orderDetails:cartArr.value
+        orderDetails: cartArr.value,
+       // paymentMethod: selectedPaymentMethod.value, // 传递选择的支付方式
       })
       .then((response) => {
         let orderId = response.data.data;
-        if(orderId!=''){
-          router.push({path:'/payment',query:{orderId:orderId}});
-        }else{
+        if (orderId != '') {
+          router.push({ path: '/payment', query: { orderId: orderId } });
+        } else {
           alert('生成订单失败！');
         }
       })
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
   </script>
   
   <style scoped>
